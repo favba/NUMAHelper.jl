@@ -1,0 +1,4 @@
+name = "NUMAHelper"
+uuid = "c3ff8000-7e65-4602-bf2f-c74abbbfe255"
+authors = ["Felipe Alves <felipe.alves.br@nps.edu>"]
+version = "0.1.0"
