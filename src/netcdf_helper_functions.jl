@@ -67,6 +67,7 @@ function read_var!(output::AbstractArray,filename::AbstractString,var::AbstractS
 end
 
 read_var(filename::AbstractString,var::AbstractString) = ncread(filename,var)
+read_var!(output::AbstractArray,filename::AbstractString,var::AbstractString) = ncread!(filename,var,output)
 
 function unique_z(z)
     set = SortedSet{Float32}()
