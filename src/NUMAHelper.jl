@@ -1,6 +1,11 @@
 module NUMAHelper
 
+using NetCDF
+using DataStructures
+
 export read_cons_file, read_last_error, read_dx_resolution, read_error, read_dt
+export cart_to_geo, cart_to_geo!, vec_cart_to_geo, vec_cart_to_geo!, read_var, read_var!
+export unique_z, unique_xy, read_var_by_z_levels, compute_quantity_at_pressure_level
 
 """
 Reads a .cons file returning a named tuple of vectors (itime,time,mass,energy)
@@ -104,5 +109,7 @@ function read_last_error(instring::AbstractString)
   errors = ntuple(errors_func,5)
   r = (;zip(variable_names,errors)...)
 end
+
+include("netcdf_helper_functions.jl")
 
 end # module
